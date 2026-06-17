@@ -238,14 +238,17 @@
     .card h3{font-size:1.2rem}
     .card p{font-size:.8rem;line-height:1.5}
 
-    /* hero: keep the photo visible as a soft full-width backdrop */
+    /* hero: photo shown fully on top, text stacked below — no overlay/fade */
+    .hero{display:block;min-height:0;padding-top:68px}
+    .hero::after{display:none}
     .hero-portrait{
-      display:block;width:100%;opacity:.42;
-      -webkit-mask-image:linear-gradient(to bottom,#000 8%,transparent 96%);
-      mask-image:linear-gradient(to bottom,#000 8%,transparent 96%);
+      position:relative;width:100%;height:auto;aspect-ratio:4/5;
+      opacity:1;filter:none;
+      -webkit-mask-image:none;mask-image:none;
+      background-position:center 18%;
     }
-    .hero::after{width:100%}
-    .hero-inner{padding:130px 0 80px;text-align:center}
+    .hero .container{position:static}
+    .hero-inner{max-width:none;padding:36px 0 60px;text-align:center}
     .hero p.lead{margin-left:auto;margin-right:auto}
     .hero-cta{justify-content:center}
     .divider-heart{margin-left:auto;margin-right:auto}
